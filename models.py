@@ -89,7 +89,6 @@ class Company(models.Model):
         managed = False
         db_table = 'company'
         unique_together = (('company_id', 'name'),)
-        verbose_name_plural = 'Companies'
 
 
 class CompanyToType(models.Model):
@@ -100,7 +99,6 @@ class CompanyToType(models.Model):
         managed = False
         db_table = 'company_to_type'
         unique_together = (('company', 'job_type'),)
-        verbose_name_plural = 'Companies to Types'
 
 
 class DjangoAdminLog(models.Model):
@@ -154,7 +152,6 @@ class Industry(models.Model):
     class Meta:
         managed = False
         db_table = 'industry'
-        verbose_name_plural = 'Industries'
 
 
 class JobType(models.Model):
@@ -164,7 +161,6 @@ class JobType(models.Model):
     class Meta:
         managed = False
         db_table = 'job_type'
-        verbose_name_plural = 'Job Types'
 
 
 class Location(models.Model):
