@@ -10,93 +10,27 @@
                 </div>
                 <div class="text-center products" style="padding: 30px;">
                     <div class="row no-gutters text-center">
+                        {% for company in companies %}
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="clean-product-item">
-                                <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Brady_logo.PNG/220px-Brady_logo.PNG" style="height: 73px;"></a></div>
+                                <div class="image"><a href={{ company.website_link }}><img class="img-fluid d-block mx-auto" src={{ company.logo_link }} style="height: 73px;"></a></div>
                                 <div class="text-center product-name">
-                                    <h3>Brady Corp.</h3>
+                                    <h3>{{ company.name }}</h3>
                                 </div>
-                                <h6>Milwaukee, Wisconsin</h6>
-                                <h6>Lawn Mowers</h6>
-                                <p style="margin: 0px;height: 144px;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.<br><br></p>
-                                <div class="text-center" style="margin-top: 9px;"><button class="btn btn-outline-light text-right text-dark border-dark" type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Full-Time</button></div>
+                                <h6>{{ company.location }} <span style="color: #c82027"><i class="fas fa-map-marker-alt"></i></span> </h6>
+                                <h6>{{ company.industry }} <span style="color: #32449c"><i class="fas fa-industry"></i></span></h6>
+                                <p style="margin: 0px;height: 144px;"><br>{{ company.description }}<br><br></p>
+                                <div class="text-center" style="margin-top: 9px;">
+                                    {% for type in company.job_type.all %}
+                                    <button class="btn btn-outline-light text-right text-dark border-dark" type="button"
+                                            style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;
+                                            margin-right: 2px;" disabled="">{{ type.job_name }}</button>
+                                    {% endfor %}
+                                </div>
                                 <div class="about"></div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="clean-product-item">
-                                <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" style="height: 73px;" src="https://leehamnews.com/wp-content/uploads/2019/02/Collins-Aerospace.jpeg"></a></div>
-                                <div class="text-center product-name">
-                                    <h3>Collins Aerospace</h3>
-                                </div>
-                                <h6>Cedar Rapids, Iowa</h6>
-                                <h6>Aerospace</h6>
-                                <p style="margin: 0px;height: 144px;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br></p>
-                                <div class="text-center" style="margin-top: 9px;"><button class="btn btn-outline-light text-right text-dark border-dark" type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Co-Op</button><button class="btn btn-outline-light text-right text-dark border-dark"
-                                        type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Summer</button></div>
-                                <div class="about"></div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="clean-product-item">
-                                <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="https://www.directsupply.com/wp-content/uploads/2018/10/Direct_Supply_logo.png" style="height: 73px;"></a></div>
-                                <div class="text-center product-name">
-                                    <h3>Direct Supply</h3>
-                                </div>
-                                <h6>Milwaukee, Wisconsin</h6>
-                                <h6>Senior Living Solutions</h6>
-                                <p style="margin: 0px;height: 144px;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br></p>
-                                <div class="text-center" style="margin-top: 9px;"><button class="btn btn-outline-light text-right text-dark border-dark" type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Full-Time</button><button class="btn btn-outline-light text-right text-dark border-dark"
-                                        type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Fall</button><button class="btn btn-outline-light text-right text-dark border-dark" type="button"
-                                        style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Summer</button></div>
-                                <div class="about"></div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="clean-product-item">
-                                <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Brady_logo.PNG/220px-Brady_logo.PNG" style="height: 73px;"></a></div>
-                                <div class="text-center product-name">
-                                    <h3>Direct Supply</h3>
-                                </div>
-                                <h6>Milwaukee, Wisconsin</h6>
-                                <h6>Senior Living Solutions</h6>
-                                <p style="margin: 0px;height: 144px;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br></p>
-                                <div class="text-center" style="margin-top: 9px;"><button class="btn btn-outline-light text-right text-dark border-dark" type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Full-Time</button><button class="btn btn-outline-light text-right text-dark border-dark"
-                                        type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Fall</button><button class="btn btn-outline-light text-right text-dark border-dark" type="button"
-                                        style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Summer</button></div>
-                                <div class="about"></div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="clean-product-item">
-                                <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" style="height: 73px;" src="https://leehamnews.com/wp-content/uploads/2019/02/Collins-Aerospace.jpeg"></a></div>
-                                <div class="text-center product-name">
-                                    <h3>Collins Aerospace</h3>
-                                </div>
-                                <h6>Cedar Rapids, Iowa</h6>
-                                <h6>Aerospace</h6>
-                                <p style="margin: 0px;height: 144px;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br></p>
-                                <div class="text-center" style="margin-top: 9px;"><button class="btn btn-outline-light text-right text-dark border-dark" type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Full-Time</button><button class="btn btn-outline-light text-right text-dark border-dark"
-                                        type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Fall</button><button class="btn btn-outline-light text-right text-dark border-dark" type="button"
-                                        style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Summer</button></div>
-                                <div class="about"></div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="clean-product-item">
-                                <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Brady_logo.PNG/220px-Brady_logo.PNG" style="height: 73px;"></a></div>
-                                <div class="text-center product-name">
-                                    <h3>Brady Corp.</h3>
-                                </div>
-                                <h6>Milwaukee, Wisconsin</h6>
-                                <h6>Senior Living Solutions</h6>
-                                <p style="margin: 0px;height: 144px;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br></p>
-                                <div class="text-center" style="margin-top: 9px;"><button class="btn btn-outline-light text-right text-dark border-dark" type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Full-Time</button><button class="btn btn-outline-light text-right text-dark border-dark"
-                                        type="button" style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Fall</button><button class="btn btn-outline-light text-right text-dark border-dark" type="button"
-                                        style="height: 33px;font-size: 10px;margin: 2px;margin-left: 2px;margin-right: 2px;" disabled="">Internship, Summer</button></div>
-                                <div class="about"></div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

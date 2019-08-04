@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'sse_career_fair.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sse_career_fair',
-        'USER': 'root',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'development',
+        'USER': 'postgres',
+        'PASSWORD': '230692',
         'HOST': 'localhost',
     }
 }

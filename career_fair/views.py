@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from career_fair.models import Company
 
 
 def index(request):
@@ -7,7 +8,7 @@ def index(request):
 
 
 def companies(request):
-    context = {'companies_active': 'active'}
+    context = {'companies_active': 'active', 'companies': Company.objects.all()}
     return render(request, 'companies.html', context)
 
 

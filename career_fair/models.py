@@ -74,6 +74,18 @@ class AuthUserUserPermissions(models.Model):
         unique_together = (('user', 'permission'),)
 
 
+class JobType(models.Model):
+    job_type_id = models.AutoField(primary_key=True)
+    job_name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.job_name
+
+    class Meta:
+        db_table = "job_type"
+        verbose_name_plural = 'Job Types'
+
+
 class Company(models.Model):
     company_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=256)
@@ -84,23 +96,18 @@ class Company(models.Model):
     website_link = models.CharField(max_length=255, blank=True, null=True)
     contact_email = models.CharField(max_length=255, blank=True, null=True)
     booth_number = models.SmallIntegerField(blank=True, null=True)
+    job_type = models.ManyToManyField(JobType)
+
+    def __str__(self):
+        return self.name
+
+    def filter_job_types(self):
+        return self.job_type.all()
 
     class Meta:
-        managed = False
-        db_table = 'company'
+        db_table = "company"
         unique_together = (('company_id', 'name'),)
         verbose_name_plural = 'Companies'
-
-
-class CompanyToType(models.Model):
-    company = models.ForeignKey(Company, models.DO_NOTHING, primary_key=True)
-    job_type = models.ForeignKey('JobType', models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'company_to_type'
-        unique_together = (('company', 'job_type'),)
-        verbose_name_plural = 'Companies to Types'
 
 
 class DjangoAdminLog(models.Model):
@@ -151,20 +158,12 @@ class Industry(models.Model):
     industry_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=256)
 
-    class Meta:
-        managed = False
-        db_table = 'industry'
-        verbose_name_plural = 'Industries'
-
-
-class JobType(models.Model):
-    job_type_id = models.AutoField(primary_key=True)
-    job_name = models.CharField(max_length=256)
+    def __str__(self):
+        return self.name
 
     class Meta:
-        managed = False
-        db_table = 'job_type'
-        verbose_name_plural = 'Job Types'
+        db_table = "industry"
+        verbose_name_plural = "Industries"
 
 
 class Location(models.Model):
@@ -172,28 +171,34 @@ class Location(models.Model):
     city = models.CharField(max_length=256)
     state = models.CharField(max_length=256)
 
+    def __str__(self):
+        return '{}, {}'.format(self.city, self.state)
+
     class Meta:
-        managed = False
-        db_table = 'location'
+        db_table = "location"
 
 
 class Major(models.Model):
     major_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, default="major")
+
+    def __str__(self):
+        return self.name
 
     class Meta:
-        managed = False
-        db_table = 'major'
+        db_table = "major"
 
 
 class Student(models.Model):
     student_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
-    major = models.ForeignKey(Major, models.DO_NOTHING)
+    major = models.ForeignKey(Major, models.DO_NOTHING, default="None")
     resume_link = models.CharField(max_length=255, blank=True, null=True)
     graduation_year = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
     class Meta:
-        managed = False
-        db_table = 'student'
+        db_table = "student"
