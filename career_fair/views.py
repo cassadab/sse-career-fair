@@ -1,7 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
 
 
 def index(request):
     return render(request, 'index.html')
+
+
+def companies(request):
+    return render(request, 'companies.html')
+
+
+def faq(request):
+    return render(request, 'faq.html')
