@@ -7,6 +7,7 @@ from .models import Location
 from .models import JobType
 from .models import Industry
 from .models import FAQ
+from .models import Student
 
 admin.site.register(Company)
 admin.site.register(Major)
@@ -14,3 +15,4 @@ admin.site.register(Location)
 admin.site.register(JobType)
 admin.site.register(Industry)
 admin.site.register(FAQ)
+admin.site.register(Student)

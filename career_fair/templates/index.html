@@ -2,24 +2,35 @@
 {% load static %}
 {% block content %}
     <main class="page landing-page">
-            <section class="clean-block clean-hero" style="background-image: url(&quot;/static/career_fair/img/tech.jpg&quot;);color: rgba(200,32,39,0.95);opacity: 1;">
+        <section class="clean-block clean-hero"
+                 style="background-image: url(&quot;/static/career_fair/img/tech.jpg&quot;);color: rgba(200,32,39,0.95);opacity: 1;">
             <div class="text">
                 <h2>1st Annual SSE Career Fair</h2>
-                <p>Join us on April 2nd, 2020 to meet face to face with over 20 software companies.</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+                <p>Join us on April 2nd, 2020 to meet face to face with over 20 software companies.</p>
+                <a href={% url 'faq' %}>
+                    <button class="btn btn-outline-light btn-lg" type="button">Learn More</button>
+                </a>
+            </div>
         </section>
         <section class="clean-block clean-info dark">
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-dark">About the Event</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                        mattis vitae leo.</p>
                 </div>
                 <div class="row align-items-center">
-                    <div class="col-md-6"><img class="img-thumbnail" src={% static 'career_fair/img/sse_full.png' %}></div>
+                    <div class="col-md-6"><img class="img-thumbnail" src={% static 'career_fair/img/sse_full.png' %}>
+                    </div>
                     <div class="col-md-6 text-center">
                         <h3 class="text-center">Industry Attendance</h3>
                         <div class="getting-started-info">
-                            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        </div><a class="btn btn-outline-dark btn-lg text-center" role="button" href="companies.html">Browse Companies</a></div>
+                            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum
+                                dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit.</p>
+                        </div>
+                        <a class="btn btn-outline-dark btn-lg text-center" role="button" href={% url 'companies' %}>Browse
+                            Companies</a></div>
                 </div>
             </div>
         </section>
