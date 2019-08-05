@@ -202,3 +202,16 @@ class Student(models.Model):
 
     class Meta:
         db_table = "student"
+
+
+class FAQ(models.Model):
+    faq_id = models.AutoField(primary_key=True)
+    question_text = models.CharField(max_length=255)
+    answer_text = models.CharField(max_length=255, default="<answer-text>")
+
+    def __str__(self):
+        return self.question_text
+
+    class Meta:
+        db_table = "faq"
+        verbose_name_plural = "FAQs"

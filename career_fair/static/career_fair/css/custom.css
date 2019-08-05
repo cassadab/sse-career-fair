@@ -1,0 +1,18 @@
+.btn-outline-dark {
+    color: #32449c;
+    border-color: #32449c;
+}
+.btn-outline-dark:hover {
+    color: white;
+    border-color: #32449c;
+    background-color: #32449c;
+}
+.btn-dark {
+    color: white;
+    border-color: #32449c;
+    background-color: #32449c;
+}
+.btn-dark:hover {
+    border-color: #020a7a;
+    background-color: #020a7a;
+}

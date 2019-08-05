@@ -7,47 +7,58 @@
     <title>SSE Career Fair</title>
     <link rel="stylesheet" href={% static 'career_fair/assets/bootstrap/css/bootstrap.min.css' %}>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href={% static 'career_fair/css/styles.min.css' %}>
+    <link rel="stylesheet" href={% static 'career_fair/css/custom.css' %}>
     <script src="https://kit.fontawesome.com/38a09c45ce.js"></script>
 </head>
 <header>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href={% url 'index' %}>SSE Career Fair</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar"
+    style="border-bottom: 6px solid #3eb649">
+        <div class="container"><a class="navbar-brand logo" href={% url 'index' %}><img style="width:45px;margin-right: 10px"
+                src={% static 'career_fair/img/SSE_S_Only_Logo_With_White_Badge.png' %}>SSE Career Fair</a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
-                id="navcol-1">
+                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link {{ home_active }}" href={% url 'index' %}>Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link {{ companies_active }}" href={% url 'companies' %}>Companies</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link {{ faq_active }}" href={% url 'faq' %}>FAQ</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link {{ about_us_active }}" href={% url 'about' %}>About Us</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link {{ register_active }}" href={% url 'register' %}>Register</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ home_active }}"
+                                                                href={% url 'index' %}>Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ companies_active }}"
+                                                                href={% url 'companies' %}>Companies</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ faq_active }}" href={% url 'faq' %}>FAQ</a>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ about_us_active }}"
+                                                                href={% url 'about' %}>About Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ register_active }}"
+                                                                href={% url 'register' %}>Register</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
-<body>
+<body style="margin-top: 50px">
 {% block content %}
 {% endblock %}
-    <div class="footer-basic">
-        <footer>
-            <div class="social"></div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">SSE</a></li>
-                <li class="list-inline-item"><a href="#">About</a></li>
-                <li class="list-inline-item"><a href="#">Registration</a></li>
-                <li class="list-inline-item"></li>
-            </ul>
-            <p class="copyright"></p>
-        </footer>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="{% static 'career_fair/js/script.min.js' %}"></script>
+<div class="footer-basic" style="background: #32449c;color: white;border-top: 6px solid #3eb649">
+    <footer>
+        <div class="social"></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">SSE</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
+            <li class="list-inline-item"><a href="#">Registration</a></li>
+            <li class="list-inline-item"></li>
+        </ul>
+        <p class="copyright"></p>
+    </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script src="{% static 'career_fair/js/script.min.js' %}"></script>
 </body>
 </html>
