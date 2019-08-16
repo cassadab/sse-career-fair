@@ -1,0 +1,1 @@
+web: gunicorn sse_career_fair.wsgi
